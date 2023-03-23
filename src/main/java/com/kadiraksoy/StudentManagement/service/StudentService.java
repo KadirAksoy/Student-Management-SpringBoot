@@ -60,5 +60,17 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
+    public StudentDto updateStudent(StudentDto studentDto){
+        Student student = new Student();
+        student.setName(studentDto.getName());
+        student.setLastName(studentDto.getLastName());
+        student.setEmail(studentDto.getEmail());
+
+        studentRepository.save(student);
+
+        return studentDto;
+
+    }
+
 
 }
